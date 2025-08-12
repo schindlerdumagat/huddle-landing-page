@@ -27,12 +27,6 @@ ul {
   list-style: none;
 }
 
-/* Set core body defaults */
-body {
-  min-height: 100vh;
-  line-height: 1.5;
-}
-
 /* Set shorter line heights on headings and interactive elements */
 h1, button {
   line-height: 1.1;
@@ -90,6 +84,8 @@ button {
 }
 
 body {
+    min-height: 100vh;
+    line-height: 1.5;
     background-image: url('./images/bg-mobile.svg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -108,7 +104,7 @@ main {
 
 .logo {
     display: inline-block;
-    width: 120px;
+    width: clamp(7.5rem, 4.6109rem + 12.3267vw, 12.5rem);
     margin-block-end: clamp(4rem, 2.9773rem + 4.5455vw, 6.5rem);
 }
 
@@ -167,8 +163,8 @@ main {
 }
 
 .socials__item {
-    width: 40px;
-    height: 40px;
+    width: 2.5rem;
+    height: 2.5rem;
     position: relative;
 }
 
@@ -219,7 +215,6 @@ main {
 
     .logo {
         display: inline-block;
-        width: 200px;
     }
 
     .content-container {

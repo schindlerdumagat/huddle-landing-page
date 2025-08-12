@@ -145,6 +145,7 @@ main {
     font-size: clamp(0.75rem, 0.3922rem + 1.5267vw, 1.125rem);
     outline: transparent;
     transition: color 300ms, background-color 300ms;
+    box-shadow: 2px 4px 9px 3px rgba(0, 0, 0, 0.25);
 }
 
 .text-content__register:is(:hover, :focus) {

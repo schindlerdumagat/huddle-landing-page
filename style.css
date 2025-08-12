@@ -213,10 +213,6 @@ main {
         max-width: 79.5rem;
     }
 
-    .logo {
-        display: inline-block;
-    }
-
     .content-container {
         display: flex;
         align-items: center;

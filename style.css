@@ -109,7 +109,7 @@ main {
 .logo {
     display: inline-block;
     width: 120px;
-    margin-block-end: var(--space-800);
+    margin-block-end: clamp(4rem, 2.9773rem + 4.5455vw, 6.5rem);
 }
 
 .content_img {
@@ -220,7 +220,6 @@ main {
     .logo {
         display: inline-block;
         width: 200px;
-        margin-block-end: 6.5rem;
     }
 
     .content-container {

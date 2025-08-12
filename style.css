@@ -1,0 +1,231 @@
+/* CSS Resets */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+p {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, button {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+button {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Variables */
+:root {
+
+    /* Colors */
+    --white: hsl(0, 0%, 100%);
+    --black: hsl(0, 0%, 0%);
+    --purple: hsl(257, 40%, 49%);
+    --magenta: hsl(300, 69%, 71%);
+    --pink: hsl(322, 100%, 66%);
+    
+    /* Fonts */
+    --ff-heading: "Poppins", sans-serif;
+    --ff-text: "Open Sans", sans-serif;
+
+    /* Spaces */
+    --space-0: 0;
+    --space-100: 0.5rem;
+    --space-200: 1rem;
+    --space-300: 1.5rem;
+    --space-400: 2rem;
+    --space-450: 2.25rem;
+    --space-500: 2.5rem;
+    --space-700: 3.5rem;
+    --space-800: 4rem;
+
+}
+
+body {
+    background-image: url('./images/bg-mobile.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: var(--purple);
+    padding: var(--space-500) var(--space-450);
+    font-family: var(--ff-text);
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+}
+
+main {
+    max-width: 38rem;
+}
+
+.logo {
+    display: inline-block;
+    width: 120px;
+    margin-bottom: var(--space-800);
+}
+
+.content_img {
+    margin-bottom: var(--space-700);
+}
+
+.text-content {
+    text-align: center;
+    margin-bottom: var(--space-500);
+}
+
+.text-content__title {
+    font-family: var(--ff-heading);
+    font-size: clamp(1.5rem, 0.5458rem + 4.0712vw, 2.5rem);
+    font-weight: 600;
+    line-height: 1.25;
+    margin-bottom: var(--space-300);
+}
+
+.text-content__description {
+    font-size: clamp(1rem, 0.8807rem + 0.5089vw, 1.125rem);
+    margin-bottom: clamp(var(--space-400), 1.5229rem + 2.0356vw, var(--space-500));
+}
+
+.text-content__register {
+    display: inline-block;
+    width: 100%;
+    padding: 0.8em;
+    max-width: 12.5rem;
+    border-radius: 1.75rem;
+    background-color: var(--white);
+    color: var(--purple);
+    text-decoration: none;
+    font-family: var(--ff-heading);
+    font-size: clamp(0.75rem, 0.3922rem + 1.5267vw, 1.125rem);
+    outline: transparent;
+    transition: color 300ms, background-color 300ms;
+}
+
+.text-content__register:is(:hover, :focus) {
+    
+    color: var(--white);
+    background-color: var(--magenta);
+}
+
+.socials {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-200);
+}
+
+.socials__item {
+    width: 40px;
+    height: 40px;
+    position: relative;
+}
+
+.socials__link {
+    position: absolute;
+    inset: 0;
+    border: 2px solid var(--white);
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    outline: transparent;
+    text-decoration: none;
+}
+
+.fa-brands {
+    color: var(--white);
+}
+
+.socials__link:is(:hover, :focus) {
+    border-color: var(--pink);
+
+    .fa-brands {
+        color: var(--pink);
+    }
+}
+
+@media screen and (min-width: 90em) {
+    body {
+        background-image: url('./images/bg-desktop.svg');
+        padding-top: var(--space-800);
+    }
+
+    main {
+        max-width: 79.5rem;
+    }
+
+    .logo {
+        display: inline-block;
+        width: 200px;
+        margin-bottom: 6.5rem;
+    }
+
+    .content-container {
+        display: flex;
+        align-items: center;
+        gap: var(--space-700);
+        margin-bottom: var(--space-300);
+    }
+
+    .content_img {
+        margin: 0;
+    }
+
+    .text-content {
+        text-align: start;
+        margin: 0;
+    }
+
+    .text-content__register {
+        text-align: center;
+    }
+
+    .socials {
+        justify-content: flex-end;
+    }
+}

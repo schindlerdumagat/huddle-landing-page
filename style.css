@@ -81,7 +81,6 @@ button {
     --space-200: 1rem;
     --space-300: 1.5rem;
     --space-400: 2rem;
-    --space-450: 2.25rem;
     --space-500: 2.5rem;
     --space-700: 3.5rem;
     --space-800: 4rem;
@@ -94,7 +93,7 @@ body {
     background-size: cover;
     background-position: center;
     background-color: var(--purple);
-    padding: var(--space-500) var(--space-450);
+    padding: var(--space-500) var(--space-400);
     font-family: var(--ff-text);
     color: var(--white);
     display: flex;
@@ -136,7 +135,7 @@ main {
 .text-content__register {
     display: inline-block;
     width: 100%;
-    padding: 0.8em;
+    padding: 0.8rem;
     max-width: 12.5rem;
     border-radius: 1.75rem;
     background-color: var(--white);
@@ -149,9 +148,13 @@ main {
 }
 
 .text-content__register:is(:hover, :focus) {
-    
     color: var(--white);
     background-color: var(--magenta);
+}
+
+.text-content__register:focus-visible {
+  outline: 2px solid var(--magenta);
+  outline-offset: 3px;
 }
 
 .socials {
@@ -175,21 +178,33 @@ main {
     border-radius: 50%;
     outline: transparent;
     text-decoration: none;
+    transition: border-color 300ms;
 }
 
 .fa-brands {
     color: var(--white);
+    transition: color 300ms;
+
 }
 
-.socials__link:is(:hover, :focus) {
+.socials__link:is(:hover, :focus, :focus-visible) {
     border-color: var(--pink);
-
-    .fa-brands {
-        color: var(--pink);
-    }
 }
 
-@media screen and (min-width: 90em) {
+.socials__link:is(:hover, :focus, :focus-visible) .fa-brands {
+    color: var(--pink);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.content-container {
+  animation: fadeIn 800ms ease-out;
+}
+
+@media screen and (min-width: 64em) {
     body {
         background-image: url('./images/bg-desktop.svg');
         padding-top: var(--space-800);
@@ -214,6 +229,7 @@ main {
 
     .content_img {
         margin: 0;
+        width: clamp(50%, 20rem + 20vw, 100%);
     }
 
     .text-content {
